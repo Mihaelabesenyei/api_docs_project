@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+
+<reference id="order_api_endpoints">
+    
+    <title>Order API Endpoints</title>
+    
+    <refbody>
+        
+        <section id="section_j42_jgq_ljc">
+            <title>GET /orders</title>
+            <p><b>Purpose:</b> Returns a list of all orders.</p>
+            <simpletable id="simpletable_k42_jgq_ljc">
+                <sthead>
+                    <stentry>Method</stentry>
+                    <stentry>URL</stentry>
+                </sthead>
+                <strow>
+                    <stentry>GET</stentry>
+                    <stentry>/orders</stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_l42_jgq_ljc">
+            <title>Response</title>
+        </section>
+        
+        <section id="section_dwy_lgq_ljc">
+            <title>POST /orders</title>
+            <p><b>Purpose:</b> Creates a new order.</p>
+            <simpletable id="simpletable_ewy_lgq_ljc">
+                <sthead>
+                    <stentry>Method</stentry>
+                    <stentry>URL</stentry>
+                </sthead>
+                <strow>
+                    <stentry>POST</stentry>
+                    <stentry>/orders</stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_fwy_lgq_ljc">
+            <title>Request Body</title>
+            <table id="table_hwy_lgq_ljc">
+                <tgroup cols="3">
+                    <thead>
+                        <row>
+                            <entry>Field</entry>
+                            <entry>Type</entry>
+                            <entry>Required</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>customer</entry>
+                            <entry>string</entry>
+                            <entry>true</entry>
+                        </row>
+                        <row>
+                            <entry>product</entry>
+                            <entry>string</entry>
+                            <entry>true</entry>
+                        </row>
+                        <row>
+                            <entry>quantity</entry>
+                            <entry>integer</entry>
+                            <entry>true</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+            <codeblock outputclass="json" id="codeblock_iwy_lgq_ljc">
+                    {
+                    "customer":"John Smith",
+                    "product":"Laptop",
+                    "quantity":1
+                    }
+                </codeblock>
+        </section>
+        <section id="section_arb_4gq_ljc">
+            <title>Response</title>
+        </section>
+        
+        <section id="section_htr_pgq_ljc">
+            <title>GET /orders/{id}</title>
+            <p><b>Purpose:</b> Returns details for a specific order.</p>
+            <simpletable id="simpletable_itr_pgq_ljc">
+                <sthead>
+                    <stentry>Method</stentry>
+                    <stentry>URL</stentry>
+                </sthead>
+                <strow>
+                    <stentry>GET</stentry>
+                    <stentry>/orders/{id}</stentry>
+                </strow>
+            </simpletable>
+        </section>
+        <section id="section_hvr_pgq_ljc">
+            <title>Path Parameters</title>
+        </section>
+        <section id="section_jtr_pgq_ljc">
+            <table id="table_ucl_pgq_ljc">
+                <tgroup cols="3">
+                    <thead>
+                        <row>
+                            <entry>Name</entry>
+                            <entry>Type</entry>
+                            <entry>Description</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>id</entry>
+                            <entry>integer</entry>
+                            <entry>Unique order identifier.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </section>
+        <section id="section_d5v_1hq_ljc">
+            <title>Response</title>
+            <p>Status Code: 200</p>
+            <codeblock outputclass="json" id="codeblock_ltr_pgq_ljc">
+                    {
+                    "id":101,
+                    "customer":"John Smith",
+                    "product":"Laptop",
+                    "quantity":1,
+                    "status":"Processing"
+                    }
+                </codeblock>
+        </section>
+        
+    </refbody>
+    
+</reference>
